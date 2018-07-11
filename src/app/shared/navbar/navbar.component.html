@@ -1,4 +1,20 @@
-<h1>
-  El-Camino
-</h1>
-<h3>learning angular by developing random project</h3>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>El-Camino</span>
+    <span class="spacer"></span>
+    <div *ngIf ="auth.afAuth.authState | async as user ; else showLogin">
+      <span>Hello {{user.displayName}}</span>
+      <button mat-button (click)="auth.logout()">Logout</button>
+    </div>
+    <ng-template #showLogin>
+      <button mat-button (click)="auth.login()">Login with google</button>
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="row">
+  <div class="col-sm-12">
+    <h3>learning angular by developing random project</h3>
+  </div>
+</div>
+
+
