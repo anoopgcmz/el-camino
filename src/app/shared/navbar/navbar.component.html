@@ -1,7 +1,7 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>El-Camino</span>
-    <span class="spacer"></span>
+    <span class="spacer"></span> 
     <div *ngIf ="auth.afAuth.authState | async as user ; else showLogin">
       <span>Hello {{user.displayName}}</span>
       <button mat-button (click)="auth.logout()">Logout</button>
@@ -10,11 +10,30 @@
       <button mat-button (click)="auth.login()">Login with google</button>
     </ng-template>
   </mat-toolbar-row>
-</mat-toolbar>
-<div class="row">
-  <div class="col-sm-12">
-    <h3>learning angular by developing random project</h3>
+</mat-toolbar> -->
+<main class="bgimg">
+  <div class="container">
+    <nav class="navbar fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href="#">elCamino</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Toura</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-</div>
-
-
+</main>
