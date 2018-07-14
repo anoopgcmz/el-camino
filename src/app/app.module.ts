@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule,Routes  } from "@angular/router";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFireModule } from "angularfire2";
@@ -12,6 +13,12 @@ import { environment } from "../environments/environment";
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { WebModule } from './web/web.module';
+
+const routes:Routes = [
+  {path:'' , redirectTo:'/home', pathMatch:'full'},
+  {path:'',loadChildren:'./web/web.module#WebModule'}
+]
 
 @NgModule({
   declarations: [
@@ -20,12 +27,14 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    WebModule
   ],
   providers: [],
   bootstrap: [AppComponent]
